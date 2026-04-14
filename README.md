@@ -1,29 +1,29 @@
-# mobile-mcp — MCP Server for Android App Security Testing
+# mobile-mcp  - MCP Server for Android App Security Testing
 
-An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that gives AI agents full control over Android devices — UI automation, Frida runtime hooking, and device management through a standard tool interface.
+An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that gives AI agents full control over Android devices  - UI automation, Frida runtime hooking, and device management through a standard tool interface.
 
 Think "Chrome MCP, but for Android apps." Connect Claude, GPT, or any MCP-compatible AI to an Android device and let it tap, type, read screens, hook functions, and inspect app internals.
 
 ## Features
 
 **UI Automation** (via uiautomator2)
-- `read_screen` — Dump all visible UI elements with text, resource IDs, bounds
-- `find_element` — Search for elements by text, resource ID, class, or description
-- `tap` / `type_text` / `swipe` — Interact with the UI
-- `screenshot` — Capture the current screen
-- `press_key` — Press hardware/software keys (back, home, enter, etc.)
+- `read_screen`  - Dump all visible UI elements with text, resource IDs, bounds
+- `find_element`  - Search for elements by text, resource ID, class, or description
+- `tap` / `type_text` / `swipe`  - Interact with the UI
+- `screenshot`  - Capture the current screen
+- `press_key`  - Press hardware/software keys (back, home, enter, etc.)
 
 **Frida Hooking**
-- `frida_attach` — Attach to a running app (or spawn it)
-- `frida_hook` — Load custom Frida scripts for runtime instrumentation
-- `frida_call` — Call exported RPC methods in loaded scripts
-- `frida_trace` — Quick method tracing
-- `frida_messages` — Read messages from hooked functions
+- `frida_attach`  - Attach to a running app (or spawn it)
+- `frida_hook`  - Load custom Frida scripts for runtime instrumentation
+- `frida_call`  - Call exported RPC methods in loaded scripts
+- `frida_trace`  - Quick method tracing
+- `frida_messages`  - Read messages from hooked functions
 
 **Device Management**
-- `device_info` — Connection status, model, Android version, SDK level
-- `list_packages` — Installed apps with optional filtering
-- `shell` — Run ADB shell commands
+- `device_info`  - Connection status, model, Android version, SDK level
+- `list_packages`  - Installed apps with optional filtering
+- `shell`  - Run ADB shell commands
 
 ## Install
 
@@ -85,7 +85,7 @@ python server.py
 ## Architecture
 
 ```
-server.py     # MCP server — registers all tools via FastMCP
+server.py     # MCP server  - registers all tools via FastMCP
 device.py     # ADB device management layer
 ui.py         # uiautomator2 UI automation (screen reading, tapping, typing)
 hooking.py    # Frida session management (attach, hook, trace, RPC calls)
